@@ -8,11 +8,21 @@ class Index extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            posts: []
+            posts: [],
+            quote: {quote: "Ok then", author: "George"}
         }
     }
 
     componentDidMount(){
+        fetch('/blog/quotes.json')
+        .then((content)=>{
+            return content.json();
+        })
+        .then((quotes)=>{
+            this.setState({
+                quote: quotes[Math.floor(Math.random() * quotes.length)]
+            })
+        })
         fetch('/blog/posts.json')
         .then((content)=>{
             return content.json();
@@ -29,6 +39,7 @@ class Index extends React.Component{
         return (
             <div className={styles['index']}>
                 <h1>George Thomas Shanti - Blog</h1>
+                <i><span className={styles['quote']}><q>{this.state.quote.quote}</q> &mdash; {this.state.quote.author}</span></i>
                 <div className={styles['list'] + " col-11"}>
                     {posts}
                 </div>
