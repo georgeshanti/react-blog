@@ -1,3 +1,21 @@
+body{
+  background: #f9f9f9;
+  text-align: center;
+  font-family: 'Roboto';
+}
+
+a{
+  color: unset;
+}
+
+a:hover{
+  color: unset;
+}
+
+a:visited{
+  color: unset;
+}
+
 .App {
   text-align: center;
 }

@@ -1,0 +1,100 @@
+.post-container{
+    width: 90%;
+    max-width: 700px;
+    display: inline-block;
+    margin: 100px auto;
+
+    .back{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        text-decoration: none;
+        font-size: 40px;
+        padding: 10px;
+
+        :hover{
+            text-decoration: none;
+        }
+    }
+
+    .post{
+        width: 100%;
+        border-style: solid;
+        border-width: 0px;
+        border-radius: 10px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0px 0px 10px 10px #f0f0f0;
+        text-align: left;
+
+        img{
+            width: 100%;
+        }
+
+        .content{
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px 10px 0px 0px;
+            overflow: hidden;
+            border-style: solid;
+            transform: translateY(-0px);
+            background: white;
+            border-width: 0px;
+            text-align: left;
+            transform: translateY(-10px);
+
+            .header{
+                display: flex;
+                justify-content: space-between;
+
+                h1{
+
+                vertical-align: text-top;
+                }
+
+                .social{
+                    vertical-align: text-top;
+                    display: inline-block;
+                    i{
+                        font-size: 1.5em;
+                        margin: 0px 5px;
+                        transition-duration: 0.4s;
+
+                        &:hover{
+                            color: #3e68ca;
+                        }
+                    }
+                }
+            }
+
+            p{
+                text-indent: 20px;
+            }
+
+            li{
+                text-indent: 0px;
+            }
+        }
+        .footer{
+            text-align: right;
+
+            .name{
+                display: inline-block;
+                vertical-align: middle;
+
+                .designation{
+                    font-size: 0.8em;
+                    color: grey;
+                }
+            }
+
+            img{
+                width: 45px;
+                border-radius: 100%;
+                border-style: solid;
+                border-width: 3px;
+                margin-left: 5px;
+            }
+        }
+    }
+}
