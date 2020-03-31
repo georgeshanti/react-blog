@@ -32,6 +32,15 @@ class Post extends React.Component{
         })
     }
 
+	share = ()=>{
+		if(navigator.share){
+			navigator.share({
+				title: this.state.title,
+				url: window.location
+			})
+		}
+	}
+
     render(){
         return (
             <div className={styles['post-container']}>
@@ -44,6 +53,7 @@ class Post extends React.Component{
                             <div className={styles['social']}>
                                 <a target="_blank" className="twitter-share-button" href={"https://twitter.com/intent/tweet?text=" + encodeURIComponent(this.state.title+"\n"+ window.location)}><i className="fab fa-twitter"></i></a>
                                 <a target="_blank" href={"https://www.facebook.com/sharer/sharer.php?u=" + window.location + "&t=" + this.state.title}><i className="fab fa-facebook-square"></i></a>
+                                { (navigator.share) && (<a onClick={this.share} href="javascript:void(0)" style={{fontSize: "0.9em", display: "block"}}><i className="fa fa-share-alt"></i></a>) }
                             </div>
                         </div>
                         <span>{this.state.date}</span>

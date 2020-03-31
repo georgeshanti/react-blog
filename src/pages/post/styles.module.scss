@@ -55,6 +55,10 @@
                 .social{
                     vertical-align: text-top;
                     display: inline-block;
+
+                    a{
+                        vertical-align: middle;
+                    }
                     i{
                         font-size: 1.5em;
                         margin: 0px 5px;

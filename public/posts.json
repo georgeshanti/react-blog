@@ -1,5 +1,10 @@
 [
     {
+        "img": "/blog/posts/you-know-nothing-03/banner.svg",
+        "tag": "you-know-nothing-03",
+        "title": "You know nothing",
+        "date": "Mar 31, 2020"
+    },{
         "img": "/blog/posts/the-trick-to-learning-02/banner.jpeg",
         "tag": "the-trick-to-learning-02",
         "title": "The Trick to Learning",
