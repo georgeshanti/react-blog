@@ -6,10 +6,25 @@ import styles from './styles.module.scss';
 class Post extends React.Component{
     constructor(props){
         super(props);
-        this.state = {title:'', date:'', content:'', img: ''}
+        this.state = {title:'', date:'', content:'', img: '', scrollPercent: 0}
+    }
+
+    handleScroll=(e)=>{
+        var h = document.documentElement, 
+            b = document.body,
+            st = 'scrollTop',
+            sh = 'scrollHeight';
+        var percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+        console.log(percent)
+        this.setState({scrollPercent: percent})
+    }
+    
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
     }
 
     componentDidMount(){
+        window.addEventListener('scroll', this.handleScroll)
         const { tag } = this.props.match.params
         fetch(`/blog/posts/${tag}/index.html`)
         .then((content) => {
@@ -44,6 +59,7 @@ class Post extends React.Component{
     render(){
         return (
             <div className={styles['post-container']}>
+                <div className={styles['progress-bar']} style={{width: this.state.scrollPercent+"%"}}></div>
                 <span className={styles["back"]}><Link to="/">&#8592;</Link></span>
                 <div className={styles['post']}>
                     <img src={this.state.img}></img>

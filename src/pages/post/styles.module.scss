@@ -3,6 +3,16 @@
     max-width: 700px;
     display: inline-block;
     margin: 100px auto;
+    
+    .progress-bar{
+        position: fixed;
+        width: 0%;
+        top: 0px;
+        left: 0px;
+        z-index: 5;
+        height: 25px;
+        background: blue;
+    }
 
     .back{
         position: absolute;
