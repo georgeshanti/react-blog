@@ -79,7 +79,7 @@ class Post extends React.Component{
                         <div className={styles['footer']}>
                             <div className={styles['name']}>
                                 George Thomas Shanti<br/>
-                                <span className={styles['designation']}>Now a blogger</span>
+                                <span className={styles['designation']}>I don't know what I am anymore</span>
                             </div>
                             <img src="/blog/george.jpg"/>
                         </div>
